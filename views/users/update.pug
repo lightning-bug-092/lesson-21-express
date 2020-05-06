@@ -1,0 +1,10 @@
+extend ../layout/layout1
+block content
+  h1 Update Avatar
+  form(method="post" enctype="multipart/form-data")
+    .form-group
+      label(for="avatar") New Avatar :
+      span &nbsp;
+      input#avatar(type="file",name="avatar")
+    button.btn.btn-primary submit
+    

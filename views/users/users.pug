@@ -1,0 +1,18 @@
+extend ../layout/layout1
+block content
+  h1 Users
+  a.badge.badge-primary.mb-3(href="/users/create") Create
+  table.table.table-dark
+    tr
+      th Avatar
+      th Name
+      th Phone Number
+      th Action
+    each user in users
+      tr
+        td
+          img(src=user.avatarUrl width="20")
+        td=user.name
+        td=user.phoneNumber
+        td
+          a.badge.badge-info(href="./users/"+user.id+"/profile") View

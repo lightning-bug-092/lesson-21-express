@@ -1,0 +1,17 @@
+extend ../layout/layout1
+block content
+  h1 Books
+  a.badge.badge-primary.mb-3(href="/books/create") Create
+  table.table.table-dark
+    tr
+      th Title book
+      th Description book
+      th Action
+    each book in books
+      tr
+        td=book.title
+        td=book.description
+        td
+          a.badge.badge-warning(href="./books/"+book.id+"/update") Update
+          span &nbsp
+          a.badge.badge-danger(href="./books/"+book.id+"/delete") Delete

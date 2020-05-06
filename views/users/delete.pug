@@ -1,0 +1,12 @@
+extend ../layout/layout1
+block content
+  h1 Delete
+  table.table.table-dark
+    tr
+      th User Name
+      th Phone Number
+    tr
+      td=user.name
+      td=user.phoneNumber
+  form(method="post")
+    button.btn.btn-danger Delete

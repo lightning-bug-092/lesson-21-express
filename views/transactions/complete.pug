@@ -1,0 +1,16 @@
+extend ../layout/layout1
+block content
+  h1 Transactions Complete?
+  if(err)
+    each er in err
+      .alert.alert-danger= er
+  form(method="post")
+    .form-group
+      label Book has been paid?
+    .form-group
+      input(type="radio", name="isComplete",value="true")
+      label Yes
+      span &nbsp;
+      input(type="radio", name="isComplete",value="false")
+      label No
+    button.btn.btn-primary Send

@@ -1,0 +1,24 @@
+extend ../layout/layout1
+block content
+  h1 Transactions
+  a.badge.badge-primary.mb-3(href="/transactions/create") Create
+  table.table.table-dark
+    tr
+      th Title book
+      th Status
+      th Action
+    each transaction,index in transactions
+      tr
+        td=books[index].title
+        if JSON.parse(transaction.isComplete) == false
+          td Incomplete
+        else
+          td Complete
+        td
+          a.badge.badge-primary(href="./transactions/"+transaction.id+"/complete") complete
+  
+  form.pagination.justify-content-center(method="get")
+      button.btn.btn-primary.m-1(name="page" value=parseInt(pageNumber)-1) <
+      button.btn.btn-primary.m-1(name="page" value=pageNumber)= pageNumber 
+      button.btn.btn-primary.m-1(name="page" value=parseInt(pageNumber)+1) >
+
