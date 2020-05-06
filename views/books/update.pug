@@ -1,0 +1,8 @@
+extend ../layout/layout1
+block content
+  h1 Update description
+  form(method="post")
+    .form-group
+        label(for="description") Description book
+        input.form-control#description(type="text" name="description")
+    button.btn.btn-light Update

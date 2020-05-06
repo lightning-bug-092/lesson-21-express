@@ -1,0 +1,17 @@
+extend ../layout/layout1
+block content
+  h1 Create transactions
+  form(method="post")
+      .form-group
+            label(for="book") Books:
+            select(name="bookId")
+              each book in books
+                  option(value=book.id) 
+                      span=book.title
+      .form-group
+            label(for="user") Users:
+            select(name="userId")
+              each user in users
+                  option(value=user.id) 
+                      span=user.name
+      button.btn.btn-primary Create

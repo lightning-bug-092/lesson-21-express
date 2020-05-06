@@ -1,0 +1,15 @@
+extend ../layout/layout1
+block content
+  h1 User Profile
+  table.table.table-dark
+    tr
+      th Name
+      th Phone Number
+      th Action
+    tr
+      td=user.name
+      td=user.phoneNumber
+      td
+        a.badge.badge-warning(href="./profile/update") Update avatar
+        span &nbsp
+        a.badge.badge-danger(href="./delete") Delete
